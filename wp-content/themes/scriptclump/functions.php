@@ -1,6 +1,6 @@
 <?php
-// Set Up
-
+// Theme Set Up
+add_theme_support('menus');
 
 // Actions & Filter hooks
 include( get_template_directory(). '/includes/front/enqueue.php');
