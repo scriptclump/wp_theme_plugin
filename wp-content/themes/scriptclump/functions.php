@@ -1,6 +1,7 @@
 <?php
 // Theme Set Up
 add_theme_support('menus');
+add_theme_support('post-thumbnails');
 
 // Actions & Filter hooks
 include( get_template_directory(). '/includes/front/enqueue.php');
