@@ -7,7 +7,11 @@
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
-        <h1 class="my-4">Blog Posts</h1>
+        <h1 class="my-4">Category: <?php
+        foreach((get_the_category()) as $category) { 
+            echo $category->cat_name . ', '; 
+        } 
+        ?></h1>
         <?php if( have_posts() ){
                 while( have_posts() ){
                   the_post();
