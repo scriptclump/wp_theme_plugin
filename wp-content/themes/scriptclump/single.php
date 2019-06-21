@@ -30,8 +30,7 @@
                 }
             }
          ?>
-        <!-- Pagination -->
-        <div class="text-center"></div>
+        <div><?php comments_template(); ?></div>
       </div>
 
       <!-- Sidebar Widgets Column -->
