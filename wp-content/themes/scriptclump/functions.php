@@ -8,12 +8,16 @@ include( get_template_directory(). '/includes/front/enqueue.php');
 include( get_template_directory(). '/includes/setup.php');
 include( get_template_directory(). '/includes/widgets.php');
 include( get_template_directory(). '/includes/activate.php');
+include( get_template_directory(). '/includes/admin/menu.php');
+include( get_template_directory(). '/includes/admin/options-page.php');
+
 
 // Includes
 add_action('wp_enqueue_scripts', 'scb_enqueue');
 add_action('after_setup_theme', 'scb_setup_theme' );
 add_action('widgets_init', 'scb_sidebar');
 add_action('after_switch_theme', 'scb_activate');
+add_action('admin_menu', 'scb_admin_menu');
 
 // Shortcodes
 
