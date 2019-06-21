@@ -6,25 +6,20 @@
 
       <!-- Blog Entries Column -->
       <div class="col-md-8">
-
-        <h1 class="my-4">Page Heading
-          <small>Secondary Text</small>
-        </h1>
-        <?php if( have_posts() ){
+      	<?php if( have_posts() ){
                 while( have_posts() ){
                   the_post();
         ?>
+        <h1 class="my-4"><?php the_title(); ?></h1>
+        
         <!-- Blog Post -->
         <div class="card mb-4">
-          <?php 
-          if( has_post_thumbnail() ){
-            the_post_thumbnail( 'medium', array('class' => 'card-img-top') );
-          }
-          ?>
           <div class="card-body">
-            <h2 class="card-title"><?php the_title(); ?></h2>
-            <p class="card-text"><?php the_excerpt();?></p>
-            <a href="<?php the_permalink(); ?>" class="btn btn-primary">Read More &rarr;</a>
+            <p class="card-text"><?php the_content();?></p>
+            <p><?php wp_link_pages(array(
+            	'before' => '<p class="text-center">'.__('Pages:').'</p>'
+            	)); ?></p>
+            <p><?php the_tags();?></p>
           </div>
           <div class="card-footer text-muted">
             Posted on <?php the_time('d m y'); ?> by
@@ -36,7 +31,7 @@
             }
          ?>
         <!-- Pagination -->
-        <div class="text-center"><?php scb_bootstrap_pagination(); ?></div>
+        <div class="text-center"></div>
       </div>
 
       <!-- Sidebar Widgets Column -->
